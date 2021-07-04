@@ -17,9 +17,9 @@ address varchar(200)
 
 create table Category(
 id int primary key,
-name varchar(20) not null,
-description varchar(500),
-category_id varchar(10)
+name varchar(20) not null
+-- description varchar(500)
+-- category_id varchar(10)
 -- created_by bigint,
 -- created_time datetime,
 -- update_by bigint,
@@ -27,12 +27,13 @@ category_id varchar(10)
 );
 
 create table Products(
-id varchar(10) primary key,
+id int auto_increment primary key ,
+code varchar(20) not null unique,
 name varchar(20) not null,
 price float,
 description varchar(500),
 -- inventory bigint,
-category_id nvarchar(10) references Category(category_id)
+category_id int references Category(category_id)
 -- created_by bigint,
 -- created_time datetime,
 -- update_by bigint,
@@ -95,8 +96,8 @@ email varchar(20)
 );
 
 select*from Staff;
-insert into Staff (username,password) values
-('admin','admin');
+insert into Staff (username,password,email) values
+('admin','123','admin@admin');
 insert Users (username,password,email,phone,address) values
 ('mai','123','careyjohnson2091@gmail.com','0973425671','Ha Noi'),
 ('linh','456','linh60725@gmail.com','0919496558','Ha Noi'),
@@ -106,31 +107,31 @@ select * from users;
 
 select*from Category;
 insert Category values
-(1,'Lens mau','Lens co mau, co dieu chinh theo do can','SP01'),
-(2,'Lens nhu','Lens nhu, co dieu chinh theo do can ','SP02'),
-(3,'Lens trong suot','Lens trong suot,khong mau, co dieu chinh theo do can','SP03'),
-(4,'Lens cho mat tho','Lens cho mat tho','SP04'),
-(5,'Coc rua lens','Coc dung de rua lens sau khi su dung','PK01'),
-(6,'Nuoc ngam lens','Nuoc dung de ngam lens sau khi su dung','PK02'),
-(7,'May rua lens','May dung de rua lens sau khi su dung','PK03'),
-(8,'Thuoc nho mat lens','Thuoc de nho mat sau khi su dung lens','PK04');
+(1,'Lens mau'),
+(2,'Lens nhu'),
+(3,'Lens trong suot'),
+(4,'Lens cho mat tho'),
+(5,'Coc rua lens'),
+(6,'Nuoc ngam lens'),
+(7,'May rua lens'),
+(8,'Thuoc nho mat lens');
 
 select*from Products;
-insert Products
-values	('P01',	'Sapa Gray',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP01'),
-		('P02',	'Phu Quoc Gray',	329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP01'),
-        ('P03',	'Hoi An Brown',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP02'),
-        ('P04',	'Purple Star ',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP02'),
-        ('P05',	'Elegant ',			329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP02'),
-        ('P06',	'Whinky whinky',	329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP03'),
-        ('P07',	'Sexy Gray',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP03'),
-        ('P08',	'Pixe ',			329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP04'),
-		('P09',	'Cherry Moon',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP04'),
-		('P10',	'Sophie Black',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8','SP04'),
-        ('P11', 'Coc rua lens',		50000,		N' Chất liệu: Nhựa cao cấp, Thiết kế: Cốc, tròn,  Loại máy: Rửa bằng tay, Công dụng: Rửa lens; cất giữ, bảo quản lens','PK01'),
-        ('P12', 'Nuoc ngam lens',	125000,		N' ISO 13485: tiêu chuẩn chất lượng cho sản phẩm y tế, Đủ tiêu chuẩn xuất khẩu châu Âu (chứng nhận CE)','PK02'),
-		('P13', 'May rua lens',		125000,		N' Chất liệu: nhựa dẻo, Kích thước: 63 * 34 * 28mm, Cân nặng: 31g, Thời gian làm sạch: , Chạy bằng pin','PK03'),
-		('P14', 'Thuoc nho mat lens',	125000,	N' Thành phần: Dung dịch Acid Hyaluronic đã được sử lý tiệt trùng, Tác dụng: Cung cấp độ ẩm cho mắt, giúp bạn không bị mỏi hay khô mắt. Ngoài ra, dung dịch còn có khả năng làm ẩm kính áp tròng trong khi sử dụng.','PK04');
+insert Products (code,name,price,description,category_id)
+values	('P01',	'Sapa Gray',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',1),
+		('P02',	'Phu Quoc Gray',	329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',1),
+        ('P03',	'Hoi An Brown',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',2),
+        ('P04',	'Purple Star ',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',2),
+        ('P05',	'Elegant ',			329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',2),
+        ('P06',	'Whinky whinky',	329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',3),
+        ('P07',	'Sexy Gray',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',3),
+        ('P08',	'Pixe ',			329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',4),
+		('P09',	'Cherry Moon',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',4),
+		('P10',	'Sophie Black',		329000 ,	N'Thành phần nước: 45 %,Đường kính: 14.2 mm,Độ giãn tròng: 13.4mm ,Bán kính cong: 8.7 mm,Độ cận: 0 - 8',4),
+        ('P11', 'Coc rua lens',		50000,		N' Chất liệu: Nhựa cao cấp, Thiết kế: Cốc, tròn,  Loại máy: Rửa bằng tay, Công dụng: Rửa lens; cất giữ, bảo quản lens',5),
+        ('P12', 'Nuoc ngam lens',	125000,		N' ISO 13485: tiêu chuẩn chất lượng cho sản phẩm y tế, Đủ tiêu chuẩn xuất khẩu châu Âu (chứng nhận CE)',6),
+		('P13', 'May rua lens',		125000,		N' Chất liệu: nhựa dẻo, Kích thước: 63 * 34 * 28mm, Cân nặng: 31g, Thời gian làm sạch: , Chạy bằng pin',7),
+		('P14', 'Thuoc nho mat lens',	125000,	N' Thành phần: Dung dịch Acid Hyaluronic đã được sử lý tiệt trùng, Tác dụng: Cung cấp độ ẩm cho mắt, giúp bạn không bị mỏi hay khô mắt. Ngoài ra, dung dịch còn có khả năng làm ẩm kính áp tròng trong khi sử dụng.',8);
      
 select*from PaymentMethod;
 insert PaymentMethod(name,PaymentMethod_id) values 
@@ -144,7 +145,7 @@ insert ShoppingCart values
 ('SC03',3,'PM02','Thanh toan bang the tin dung'),
 ('SC04',4,'PM02','Thanh toan bang the tin dung');
 
-select*from ShoppingCart_Product;
+-- select*from ShoppingCart_Product;
 -- insert ShoppingCart_Product(product_id,shoppingcart_id,price,total_price,category_id) values
 
 
