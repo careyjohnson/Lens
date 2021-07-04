@@ -1,25 +1,24 @@
-package com.controller;
+package com.controller.admin;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class StaffController
+ * Servlet implementation class AdminLogout
  */
-@WebServlet("/staff")
-public class StaffController extends HttpServlet {
+@WebServlet("/sigout")
+public class AdminLogout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StaffController() {
+    public AdminLogout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,8 +27,9 @@ public class StaffController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/staff.jsp");
-		dispatcher.forward(request, response);
+		HttpSession httpSession=request.getSession();
+		httpSession.invalidate();
+		response.sendRedirect("/ECWeb/");
 	}
 
 	/**

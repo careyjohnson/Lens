@@ -53,7 +53,6 @@ public class LoginController extends HttpServlet {
 			LoginDao loginDao=new LoginDao();
 			
 			UserBean user=loginDao.isValidLogin(loginBean);
-			UserBean staff=loginDao.isValidLoginStaff(loginBean);
 			
 			if(user!=null ) {
 				HttpSession httpSession=request.getSession();

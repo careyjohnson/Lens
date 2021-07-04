@@ -1,14 +1,14 @@
 package com.bean;
 
-public class UserBean {
+public class AdminBean {
 	private int id;
 	private String username;
 	private String password;
 	private String email;
-	public UserBean() {
+	public AdminBean() {
 		super();
 	}
-	public UserBean(int id, String username, String password, String email) {
+	public AdminBean(int id, String username, String password, String email) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -41,11 +41,4 @@ public class UserBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	@Override
-	public String toString() {
-		return "UserBean [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + "]";
-	}
-	
-	
 }
