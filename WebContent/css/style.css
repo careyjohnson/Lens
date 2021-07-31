@@ -472,11 +472,7 @@ card product */
     display: flex;
     flex-wrap: wrap;
 }
-/* .cart .table tbody tr td .main .d-flex{
-    padding-right:30px;
-    display: flex;
-    flex-wrap: wrap;
-} */
+
 td p{
     font-size: 20px;
     font: bold;
@@ -565,5 +561,4 @@ td a{
     display: block;
     text-align: center;
 }
-
 

@@ -71,7 +71,7 @@ public class AdminLoginController extends HttpServlet {
 			} 
 
 			else {
-				request.setAttribute("loginMessage", "Sai tên đăng nhập, mật khẩu hoặc email.");
+				request.setAttribute("loginMessage", "Sai tên đăng nhập hoặc mât khẩu hoặc email.");
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/admin/admin_login.jsp");
 				dispatcher.forward(request, response);
 			}
