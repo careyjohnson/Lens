@@ -13,7 +13,7 @@ import com.entity.Product;
 /**
  * Servlet implementation class DeleteProduct
  */
-@WebServlet("/delete")
+@WebServlet("/admin/delete")
 public class DeleteProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,7 +36,7 @@ public class DeleteProduct extends HttpServlet {
 		Product pd = new Product();
 		pd.setId(Integer.parseInt(req.getParameter("id")));
 		new ManagerProductDao().removeProduct(pd);
-		resp.sendRedirect("/admin/ManagerProduct");
+		resp.sendRedirect("/admin/managerProduct");
 	}
 
 

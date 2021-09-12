@@ -16,7 +16,7 @@ import com.dao.admin.ManagerProductDao;
 /**
  * Servlet implementation class ManagerCategoryController
  */
-@WebServlet("/admin/ManagerCategory")
+@WebServlet("/admin/managerCategory")
 public class ManagerCategoryController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

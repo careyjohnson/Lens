@@ -24,7 +24,7 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 <%-- <h4 style="color"><%= session.getAttribute("username") %></h4> --%>
  <!-- Image Slider -->
 <div
@@ -511,6 +511,6 @@
         </div>
       </div>
     </div>
-   <jsp:include page="footer.jsp"></jsp:include> 
+   <jsp:include page="/WEB-INF/footer.jsp"></jsp:include> 
 </body>
 </html>

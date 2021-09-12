@@ -87,4 +87,5 @@ public class ManagerCategoryDao {
 			e.printStackTrace();
 		}
 	}
+	
 }

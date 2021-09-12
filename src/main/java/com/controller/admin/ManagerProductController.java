@@ -21,7 +21,7 @@ import com.model.SpecializedModel;
 /**
  * Servlet implementation class ManagerProductController
  */
-@WebServlet("/admin/ManagerProduct")
+@WebServlet("/admin/managerProduct")
 public class ManagerProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addCategory"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Category</span></a>
-                            <a href="delete?id=${cb.id}" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                            <a href="#" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th>ID</th>
+                            <th>Category code</th>
                             <th>Name</th>
                             <th>Description</th>
                             <th>Actions</th>
@@ -77,10 +77,10 @@
                                 <td>${cb.name}</td>
                                 <td>${cb.description}</td>
                                 <td>
-                                    <a href="edit?id=${cb.id}&name=${cb.name}&description=${cb.description}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="delete?id=${cb.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                </td>
-							
+                                	<a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+									<a href="deleteCategory?id=${cb.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+								 </td>
+                                                       
                             </tr>
                         </c:forEach>
                     </tbody>
